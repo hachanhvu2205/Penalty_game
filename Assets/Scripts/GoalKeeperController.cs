@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GoalKeeperController : MonoBehaviour {
@@ -19,7 +19,6 @@ public class GoalKeeperController : MonoBehaviour {
 	}
 
 	public void GoalKeeperJump(int shootDirection){
-		//UNDONE Seleccionar una animacion segun la dificultad, dependiendo del valor recibido.
 		switch(shootDirection){
 			case 25:
 			anim.SetTrigger(jumpLongRightHash);

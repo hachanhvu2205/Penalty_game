@@ -32,16 +32,17 @@ public class NewSwipeControl : MonoBehaviour {
 
 	public void PlayerLogic(){
 
-		if (Input.touchCount > 0){
-			var touch = Input.GetTouch(0);
-
-			switch(touch.phase) {
-				case TouchPhase.Began:
-				startPos = touch.position;
-				break;
-
-				case TouchPhase.Ended:
-				endPos = touch.position;
+		// if (Input.touchCount > 0){
+		// 	var touch = Input.GetTouch(0);
+		// if (Input.GetKeyDown(KeyCode.LeftArrow)){
+			 if (Input.GetMouseButtonDown(0)) {
+				// case TouchPhase.Began:
+				startPos = new Vector2(Input.mousePosition.x,Input.mousePosition.y);
+				
+			 }
+			  if (Input.GetMouseButtonUp(0)) {
+				// case TouchPhase.Ended:
+				endPos = new Vector2(Input.mousePosition.x,Input.mousePosition.y);
 
 				if(Mathf.Abs(endPos.x - startPos.x) > dragDistance || Mathf.Abs(endPos.y - startPos.y) > dragDistance){
 					xPos = (endPos.x - startPos.x) / Screen.height * factor;
@@ -77,8 +78,8 @@ public class NewSwipeControl : MonoBehaviour {
 					}
 				}
 				gameController.MoveSoccerPlayer();
-				break;
-			}
+				
+			// }
 		}
 	}
 
